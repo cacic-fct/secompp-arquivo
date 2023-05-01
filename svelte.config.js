@@ -1,7 +1,9 @@
-import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.js';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+
+const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,11 +13,21 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
 
+	paths: {
+		base: dev ? '' : '/semanas/secompp/arquivo'
+	},
+
 	kit: {
-		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
-		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter()
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: null,
+			precompress: false,
+			strict: true
+		}),
+		prerender: {
+			handleHttpError: 'ignore'
+		}
 	}
 };
 
