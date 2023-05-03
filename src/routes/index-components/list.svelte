@@ -18,9 +18,10 @@
 	}
 </script>
 
+<!--prettier-ignore-->
 {#each secomppList as item}
 	## {item.year}
-	**{item.name}**
+	**{item.name}**  
 	{item.date}
 
 	{item.description}
