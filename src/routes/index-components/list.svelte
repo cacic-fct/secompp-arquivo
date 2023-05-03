@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	//import secomppList from '../../../static/lista-secompps.json';
 
 	const url = './lista-secompps.json';
 
