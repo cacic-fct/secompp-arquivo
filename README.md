@@ -1,4 +1,4 @@
-# arquivo-secompp
+# secompp-arquivo
 
 Página que lista os sites antigos da SECOMPP.
 
