@@ -1,5 +1,11 @@
 [
     {
+        "name": "SECOMPP23",
+        "year": "2023",
+        "description": "20ª Semana do Curso de Ciência da Computação da FCT-Unesp",
+        "date": "25 a 29 de setembro de 2023"
+    },
+    {
         "name": "SECOMPP22",
         "year": "2022",
         "description": "19ª Semana do Curso de Ciência da Computação da FCT-Unesp",
